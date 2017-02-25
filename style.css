@@ -8,7 +8,7 @@ and open the template in the editor.
     Author     : Patricia Sittikul
 */
 body {
-    font: Ubuntu;
+    font-family: "Ubuntu", sans-serif;
 }
 #header {
     width:25%;

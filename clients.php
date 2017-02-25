@@ -8,6 +8,7 @@ and open the template in the editor.
     <head>
         <meta charset="UTF-8">
         <link rel="stylesheet" href="style.css">
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
         <script type="text/javascript" src="clientInfoForm.js"></script>
         <title>LINC Database</title>
     </head>
@@ -32,17 +33,43 @@ and open the template in the editor.
                     First Name  <input type="text" name="empFirstName" id="empFirstName"/></br>
                     Last Name <input type="text" name="empLastName" id="empLastName"/></br>
                     Email <input type="email" name="empEmail" id="empEmail"/></br>
+                    Secondary Email <input type="email" name="empEmail2" id="empEmail2"/><br/>
                     Phone <input type="tel" name="empPhone" id="empPhone"/></br>
+                    Secondary Phone <input type="empPhone2" id="empPhone2"/><br/>
+                    Preferred Contact Method <input type=""
                     Address <input type="text" name="empAddress" id="empAddress"/></br>
                     City <input type="text" name="empCity" id="empCity"/></br>
                     State <input type="text" name="empState" id="empState"/></br>
                     Referral Date <input type="date" name="referralDate" id="referralDate"/></br>
                     Referring Company 
+                    <input list="companies">
+                    <datalist id="companies">
+                        <option value="Air Products, Inc.">
+                        <option value="Boston Beer Company">
+                        <option value="B. Braun, Inc.">
+                        <option value="Crayola">
+                        <option value="DeSales University">
+                        <option value="Just Born, Inc.">
+                        <option value="Lafayette College">
+                        <option value="Lehigh University">
+                        <option value="Lehigh Valley Health Network">
+                        <option value="Lutron">
+                        <option value="Moravian College">
+                        <option value="Muhlenberg College">
+                        <option value="Northampton Community College">
+                        <option value="Olympus">
+                        <option value="OraSure">
+                        <option value="PPL">
+                        <option value="St. Luke's">
+                        <option value="Victaulic">        
+                    </datalist> 
+                    <!--
                     <select name="company">
                         <option disabled selected value>
                             -- select an option -- 
                         </option>
                         <option value="Air Products, Inc.">Air Products, Inc.</option>
+                        <option value="Boston Beer Company">Boston Beer Company</option>
                         <option value="B. Braun, Inc.">B. Braun, Inc.</option>
                         <option value="Crayola">Crayola</option>
                         <option value="DeSales University">DeSales University</option>
@@ -54,11 +81,16 @@ and open the template in the editor.
                         <option value="Moravian College">Moravian College</option>
                         <option value="Muhlenberg College">Muhlenberg College</option>
                         <option value="Northampton Community College">Northampton Community College</option>
+                        <option value="Olympus">Olympus</option>
                         <option value="OraSure">OraSure</option>
                         <option value="PPL">PPL</option>
                         <option value="St. Luke's">St. Luke's</option>
-                    </select></br>
-                    <input type="submit">Submit</input>
+                        <option value="Victaulic">Victaulic</option>
+                    </select> --></br>
+                    Position<input type="text" name="empPosition"/><br/>
+                    Department<input type="text" name="empDepartment"/><br/>
+                    <br/>
+                    <input type="submit" value="Save"></input>
                 </form>
             </div>
             <div id="partnerForm">
@@ -68,8 +100,8 @@ and open the template in the editor.
                     Last Name <input type="text" name="spLastName" id="spLastName"/></br>
                     Primary Email <input type="email" name="spPrimaryEmail" id="spPrimaryEmail"/></br>
                     Secondary Email <input type="email" name="spSecondaryEmail" id="spSecondaryEmail"/></br>
-                    Home Phone <input type="tel" name="spHomePhone" id="spHomePhone"/></br>
-                    Cell Phone <input type="tel" name="spCellPhone" id="spCellPhone"/></br>
+                    Primary Phone <input type="tel" name="spHomePhone" id="spHomePhone"/></br>
+                    Secondary Phone <input type="tel" name="spCellPhone" id="spCellPhone"/></br>
                     Professional Title <input type="text" name="spTitle" id="spTitle"/></br>
                 </form>
             </div>
