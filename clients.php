@@ -13,9 +13,9 @@ and open the template in the editor.
         <title>LINC Database</title>
     </head>
     <body>
-        <div id="header">
-            <img src="linc-logo-blue.jpg"></img>
-        </div>
+        <?php
+            include 'header.php';
+        ?>
         <div id ="sidebar">
             <ul>
                 <li>Dashboard</li>
@@ -94,7 +94,7 @@ and open the template in the editor.
                 </form>
             </div>
             <div id="partnerForm">
-                <form method="post" action="save.php" enctype="multipart/form-data" >
+                <form method="post" action="clients.php" enctype="multipart/form-data" >
                     <h3>Spouse/Partner</h3>
                     First Name <input type="text" name="spFirstName" id="spFirstName"/></br>
                     Last Name <input type="text" name="spLastName" id="spLastName"/></br>
@@ -123,7 +123,17 @@ and open the template in the editor.
                             </tr>
                             <tr>
                                 <td>
-                                    <select id="service" onchange="updateUnits()">
+                                    <input list="services">
+                                        <datalist id="services">
+                                            <option value="Dual Career"/>
+                                            <option value="Community Transition"/>
+                                            <option value="Dual Career with Community Transition"/>
+                                            <option value="Relocation Assistance"/>
+                                            <option value="Pre-Hire Tier 1"/>
+                                            <option value="Pre-Hire Tier 2"/>
+                                            <option value="Pre-Hire Tier 3"/>
+                                            </datalist>
+                                    <!--<select id="service" onchange="updateUnits()">
                                         <option disabled selected value>
                                             -- select an option -- 
                                         </option>
@@ -134,7 +144,7 @@ and open the template in the editor.
                                         <option value="PH1">Pre-Hire Tier 1</option>
                                         <option value="PH2">Pre-Hire Tier 2</option>
                                         <option value="PH3">Pre-Hire Tier 3</option>
-                                    </select>
+                                    </select> -->
                                 </td>
                                 <td>
                                     <input type="date" name="invoiceDate" id="invoiceDate"/>
@@ -181,7 +191,7 @@ and open the template in the editor.
             </div>
         </div>
         <?php
-        // put your code here
+            include 'save.php';
         ?>
     </body>
 </html>
