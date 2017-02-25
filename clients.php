@@ -16,15 +16,9 @@ and open the template in the editor.
         <?php
             include 'header.php';
         ?>
-        <div id ="sidebar">
-            <ul>
-                <li>Dashboard</li>
-                <li><a href="clients.php">Clients</a></li>
-                <li>Customers</li>
-                <li>Ambassadors</li>
-                <li>Interviewers & Contacts</li>
-                <li>Archive</li>
-            </ul>
+        <?php
+            include 'sidebar.php';
+        ?>
         </div>
         <div id="formSection">
             <div id="employeeForm">
@@ -36,7 +30,8 @@ and open the template in the editor.
                     Secondary Email <input type="email" name="empEmail2" id="empEmail2"/><br/>
                     Phone <input type="tel" name="empPhone" id="empPhone"/></br>
                     Secondary Phone <input type="empPhone2" id="empPhone2"/><br/>
-                    Preferred Contact Method <input type=""
+                    Preferred Contact Method <input type="radio" id="contactMethod" value="Phone">Phone</input>
+                    <input type="radio" id="contactMethod" value="Email">Email</input><br/>
                     Address <input type="text" name="empAddress" id="empAddress"/></br>
                     City <input type="text" name="empCity" id="empCity"/></br>
                     State <input type="text" name="empState" id="empState"/></br>
@@ -123,6 +118,7 @@ and open the template in the editor.
                             </tr>
                             <tr>
                                 <td>
+                                    <!--Need to add code to update unit count based on selected service-->
                                     <input list="services">
                                         <datalist id="services">
                                             <option value="Dual Career"/>
@@ -156,14 +152,12 @@ and open the template in the editor.
                                     <input type="date" name="intakeDate" id="intakeDate"/>
                                 </td>
                                 <td>
-                                    <select name="status" id = "status" onchange="updateStatus()">
-                                        <option disabled selected value>
-                                            -- select an option --
-                                        </option>
-                                        <option value="Open">Open</option>
-                                        <option value="Closed">Closed</option>
-                                        <option value="Deferred">Deferred</option>
-                                    </select>
+                                    <!--Need to add code to update fields based on client status-->
+                                    <input list="status">
+                                    <datalist id="status" onchange="updateStatus()">
+                                        <option value="Open"/>
+                                        <option value="Closed"/>
+                                        <option value="Deferred"/>
                                 </td>
                                 <td>
                                     <input type="date" name="closeDate" id="closeDate"/>
