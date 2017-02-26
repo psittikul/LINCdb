@@ -7,6 +7,15 @@ and open the template in the editor.
     Created on : Jan 15, 2017, 12:51:09 AM
     Author     : Patricia Sittikul
 */
+/*----Global Styles----*/
+body {
+    font-family: "Ubuntu", sans-serif;
+}
+
+.required {
+    font-weight: bold;
+}
+
 #header {
     width:25%;
     margin-bottom: 5%;
@@ -14,11 +23,6 @@ and open the template in the editor.
 #header img {
     width: 75%;
     margin: 10%;
-}
-
-a:-webkit-any-link {
-    text-decoration: none;
-    color: inherit;
 }
 
 #sidebar {
@@ -30,10 +34,11 @@ a:-webkit-any-link {
 #sidebar ul {
     list-style-type: none;
 }
-
+/*----Form Styles----*/
 #formSection {
     width: 75%;
     float: right;
+    padding-bottom: 15%;
 }
 #employeeForm {
     width: 48%;
@@ -58,14 +63,13 @@ a:-webkit-any-link {
     margin-top: 5px;
 }
 
-#closeDate {
-    visibility: hidden;
-}
-
-#closeDateLabel {
-    visibility: hidden;
+.serviceRowOdd {
+    background-color: blue;
 }
 
 input {
     margin: .5%;
 }
+
+
+

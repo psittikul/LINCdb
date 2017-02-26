@@ -7,7 +7,7 @@ and open the template in the editor.
 <html>
     <head>
         <meta charset="UTF-8">
-        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="clientStyle.css?ver=<?php echo filemtime('clientStyle.css');?>" type="text/css">
         <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
         <script type="text/javascript" src="clientInfoForm.js"></script>
         <title>LINC Database</title>
@@ -15,28 +15,44 @@ and open the template in the editor.
     <body>
         <?php
             include 'header.php';
-        ?>
-        <?php
             include 'sidebar.php';
         ?>
         </div>
         <div id="formSection">
+            <h4>Bolded fields are required in order to update.</h4>
             <div id="employeeForm">
                 <form action="save.php" method="post">
                     <h3>Employee</h3>
-                    First Name  <input type="text" name="empFirstName" id="empFirstName"/></br>
-                    Last Name <input type="text" name="empLastName" id="empLastName"/></br>
-                    Email <input type="email" name="empEmail" id="empEmail"/></br>
-                    Secondary Email <input type="email" name="empEmail2" id="empEmail2"/><br/>
-                    Phone <input type="tel" name="empPhone" id="empPhone"/></br>
-                    Secondary Phone <input type="empPhone2" id="empPhone2"/><br/>
-                    Preferred Contact Method <input type="radio" id="contactMethod" value="Phone">Phone</input>
-                    <input type="radio" id="contactMethod" value="Email">Email</input><br/>
-                    Address <input type="text" name="empAddress" id="empAddress"/></br>
-                    City <input type="text" name="empCity" id="empCity"/></br>
-                    State <input type="text" name="empState" id="empState"/></br>
-                    Referral Date <input type="date" name="referralDate" id="referralDate"/></br>
-                    Referring Company 
+                    <label for="empFirstName" class="required">First Name</label>
+                    <input type="text" name="empFirstName" id="empFirstName"/></br>
+                    <label for="empLastName" class="required">Last Name</label>
+                    <input type="text" name="empLastName" id="empLastName"/></br>
+                    <label for="empEmail" class="required">Primary Email</label>
+                    <input type="email" name="empEmail" id="empEmail"/></br>
+                    <label for="empEmail2">Secondary Email</label>
+                    <input type="email" name="empEmail2" id="empEmail2"/><br/>
+                    <label for = "empPhone">Phone</label>
+                    <input type="tel" name="empPhone" id="empPhone"/></br>
+                    <label for="empPhone2">Secondary Phone</label>
+                    <input type="empPhone2" id="empPhone2"/><br/>
+                    Preferred Contact Method
+                    <label for="phonePreferred">Phone</label>
+                    <input type="radio" name="contactMethod" id="phonePreferred" value="Phone"/>
+                    <label for="emailPreferred">Email</label>
+                    <input type="radio" name="contactMethod" id="emailPreferred" class="radio" value="Email"/>
+                    <label for="none">None</label>
+                    <input type="radio" name="contactMethod" id="none" value="None"/><br/>
+                    <label for="empAddress">Address</label>
+                    <input type="text" name="empAddress" id="empAddress"/></br>
+                    <label for="empCity">City</label> 
+                    <input type="text" name="empCity" id="empCity"/></br>
+                    <label for="empState">State</label>
+                    <input type="text" name="empState" id="empState"/></br>
+                    <label for="referralDate" class="required">Referral Date</label>
+                    <input type="date" name="referralDate" id="referralDate"/></br>
+                    <label for="giftedServices">Check this if this referral was a gifted service
+                    <input type="radio" id="giftedServices" class="radio" name="giftedServices"/><br/>
+                    <label for="companies" class = "required">Employer</label>
                     <input list="companies">
                     <datalist id="companies">
                         <option value="Air Products, Inc.">
@@ -58,127 +74,105 @@ and open the template in the editor.
                         <option value="St. Luke's">
                         <option value="Victaulic">        
                     </datalist> 
-                    <!--
-                    <select name="company">
-                        <option disabled selected value>
-                            -- select an option -- 
-                        </option>
-                        <option value="Air Products, Inc.">Air Products, Inc.</option>
-                        <option value="Boston Beer Company">Boston Beer Company</option>
-                        <option value="B. Braun, Inc.">B. Braun, Inc.</option>
-                        <option value="Crayola">Crayola</option>
-                        <option value="DeSales University">DeSales University</option>
-                        <option value="Just Born, Inc.">Just Born</option>
-                        <option value="Lafayette College">Lafayette College</option>
-                        <option value="Lehigh University">Lehigh University</option>
-                        <option value="Lehigh Valley Health Network">Lehigh Valley Health Network</option>
-                        <option value="Lutron">Lutron</option>
-                        <option value="Moravian College">Moravian College</option>
-                        <option value="Muhlenberg College">Muhlenberg College</option>
-                        <option value="Northampton Community College">Northampton Community College</option>
-                        <option value="Olympus">Olympus</option>
-                        <option value="OraSure">OraSure</option>
-                        <option value="PPL">PPL</option>
-                        <option value="St. Luke's">St. Luke's</option>
-                        <option value="Victaulic">Victaulic</option>
-                    </select> --></br>
-                    Position<input type="text" name="empPosition"/><br/>
-                    Department<input type="text" name="empDepartment"/><br/>
+                    </br>
+                    <label for="empPosition">Position</label>
+                    <input type="text" name="empPosition"/><br/>
+                    <label for="empDepartment">Department</label>
+                    <input type="text" name="empDepartment"/><br/>
+                    <label for="empTitle">Professional Title</label>
+                    <input type="text" name="empTitle" id="empTitle"/>
                     <br/>
-                    <input type="submit" value="Save"></input>
+                    <br/>
+                    <input type="submit" value="Save" name="save"></input>
                 </form>
             </div>
             <div id="partnerForm">
                 <form method="post" action="clients.php" enctype="multipart/form-data" >
                     <h3>Spouse/Partner</h3>
-                    First Name <input type="text" name="spFirstName" id="spFirstName"/></br>
-                    Last Name <input type="text" name="spLastName" id="spLastName"/></br>
-                    Primary Email <input type="email" name="spPrimaryEmail" id="spPrimaryEmail"/></br>
-                    Secondary Email <input type="email" name="spSecondaryEmail" id="spSecondaryEmail"/></br>
-                    Primary Phone <input type="tel" name="spHomePhone" id="spHomePhone"/></br>
-                    Secondary Phone <input type="tel" name="spCellPhone" id="spCellPhone"/></br>
-                    Professional Title <input type="text" name="spTitle" id="spTitle"/></br>
+                    <label for="spFirstName">First Name</label>
+                    <input type="text" name="spFirstName" id="spFirstName"/></br>
+                    <label for="spLastName">Last Name</label>
+                    <input type="text" name="spLastName" id="spLastName"/></br>
+                    <label for="spEmail">Primary Email</label>
+                    <input type="email" name="spEmail" id="spEmail"/></br>
+                    <label for="spEmail2">Secondary Email</label>
+                    <input type="email" name="spEmail2" id="spEmail2"/></br>
+                    <label for="spPhone">Primary Phone</label>
+                    <input type="tel" name="spPhone" id="spPhone"/></br>
+                    <label for="spPhone2">Secondary Phone</label>
+                    <input type="tel" name="spPhone2" id="spPhone2"/></br>
+                    <label for="spTitle">Professional Title</label>
+                    <input type="text" name="spTitle" id="spTitle"/></br>
                 </form>
             </div>
             <div id="servicesSec">
                 <form method="post" action="clients.php" enctype="multipart/form-data" >
-                    <h3>Services</h3>
-                    <table>
+                    <h3 class="required">Services</h3>
+                    <table class = "serviceRowOdd">
                         <tbody>
-                            <tr>
-                                <td>Service Type</td>
-                                <td>Invoice Date</td>
-                                <td>Referral Date</td>
-                                <td id="intakeDateLabel">Intake Date</td>
-                                <td>Status</td>
-                                <td id="closeDateLabel">Close Date</td>
-                                <td>Coordinator</td>
-                                <td>Units</td>
-                                <td>Invoice Number</td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <!--Need to add code to update unit count based on selected service-->
-                                    <input list="services">
-                                        <datalist id="services">
-                                            <option value="Dual Career"/>
-                                            <option value="Community Transition"/>
-                                            <option value="Dual Career with Community Transition"/>
-                                            <option value="Relocation Assistance"/>
-                                            <option value="Pre-Hire Tier 1"/>
-                                            <option value="Pre-Hire Tier 2"/>
-                                            <option value="Pre-Hire Tier 3"/>
-                                            </datalist>
-                                    <!--<select id="service" onchange="updateUnits()">
-                                        <option disabled selected value>
-                                            -- select an option -- 
-                                        </option>
-                                        <option value="DC">Dual Career</option>
-                                        <option value="CT">Community Transition</option>
-                                        <option value="CT+">Community Transition Addition</option>
-                                        <option value="RA">Relocation Assistance</option>
-                                        <option value="PH1">Pre-Hire Tier 1</option>
-                                        <option value="PH2">Pre-Hire Tier 2</option>
-                                        <option value="PH3">Pre-Hire Tier 3</option>
-                                    </select> -->
-                                </td>
-                                <td>
-                                    <input type="date" name="invoiceDate" id="invoiceDate"/>
-                                </td>
-                                <td>
-                                    <input type="date" name="referralDate" id="referralDate"/>
-                                </td>
-                                <td>
-                                    <input type="date" name="intakeDate" id="intakeDate"/>
-                                </td>
-                                <td>
-                                    <!--Need to add code to update fields based on client status-->
-                                    <input list="status">
-                                    <datalist id="status" onchange="updateStatus()">
-                                        <option value="Open"/>
-                                        <option value="Closed"/>
-                                        <option value="Deferred"/>
-                                </td>
-                                <td>
-                                    <input type="date" name="closeDate" id="closeDate"/>
-                                </td>
-                                <td>
-                                    <select name="coordinator">
-                                        <option disabled selected value>
-                                            -- select an option --
-                                        </option>
-                                        <option value="MB">MB</option>
-                                        <option value="SM">SM</option>
-                                        <option value="DC">DC</option>
-                                    </select>
-                                </td>
-                                <td>
-                                    <input type="number" name="units" id="units"/>
-                                </td>
-                                <td>
-                                    <input type="number" name="invoiceNumber" id="invoiceNumber"/>
-                                </td>
-                            </tr>
+                                <tr id = "labelRow">
+                                    <td><label for="services">Service Type</label></td>
+                                    <td><label for="referralDateField">Referral Date</label></td>
+                                    <td><label for="status">Status</label></td>
+                                    <td><label for="units">Units</label></td>
+                                    <td><label for="coordinator">Coordinator</label></td>
+                                </tr>
+                                <tr id="fieldRow">
+                                    <td>
+                                        <select id="services" onchange="updateUnits()">
+                                            <option value="blank"> -- Select a service -- </option>
+                                            <option value="Dual Career">Dual Career</option>
+                                            <option value="Community Transition">Community Transition</option>
+                                            <option value="Community Transition Add-on">Community Transition Add-on</option>
+                                            <option value="Dual Career Add-on">Dual Career Add-on</option>
+                                            <option value="Relocation Assistance">Relocation Assistance</option>
+                                            <option value="Pre-Hire Tier 1">Tier 1</option>
+                                            <option value="Pre-Hire Tier 2">Tier 2</option>
+                                            <option value="Pre-Hire Tier 3">Tier 3</option>
+                                         </select>
+                                    </td>
+                                    <td>
+                                        <input type="date" name="referralDate" id="referralDate"/>
+                                    </td>
+                                    <td>
+                                        <!--Need to add code to update fields based on client status-->
+                                        <select id="status" onchange="updateStatus()">
+                                            <option value="blank"> -- Select a status -- </option>
+                                            <option value="Open">Open</option>
+                                            <option value="Closed">Closed</option>
+                                            <option value="Deferred">Deferred</option>
+                                        </select>
+                                    </td>
+                                    <td>
+                                        <input type="number" name="units" id="units"/>
+                                    </td>                                
+                                    <td>
+                                        <select name="coordinator" id="coordinator">
+                                            <option disabled selected value>
+                                                -- select an option --
+                                            </option>
+                                            <option value="MB">MB</option>
+                                            <option value="SM">SM</option>
+                                            <option value="DC">DC</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                                <tr id="additionalLabelRow">
+                                    <td><label for="invoiceDateField">Invoice Date</label></td>
+                                    <td><label for="invoiceNumber">Invoice Number</label></td>
+                                    <td><label for="intakeDate">Intake Date</label></td>
+                                </tr>
+                                <tr id="additionalFieldRow">
+                                    <td>
+                                        <input type="date" name="invoiceDate" id="invoiceDateField"/>
+                                    </td>
+                                    <td>
+                                        <input type="number" name="invoiceNumber" id="invoiceNumberField"/>
+                                    </td>
+                                    <td>
+                                        <input type="date" name="intakeDate" id="intakeDateField"/>
+                                    </td>                                
+                                </tr>
                         </tbody>
                     </table>
                 </form>
