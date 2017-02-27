@@ -12,12 +12,12 @@ and open the template in the editor.
     <body>
     <div id="sidebar">
         <ul>
-            <li>Dashboard</li>
-            <li><a href="clients.php">Clients</a></li>
-            <li>Customers</li>
-            <li>Ambassadors</li>
-            <li>Interviewers & Contacts</li>
-            <li>Archive</li>
+            <li class="sidebarOption">Dashboard</li>
+            <li class="sidebarOption"><a href="clients.php">Clients</a></li>
+            <li class="sidebarOption">Customers</li>
+            <li class="sidebarOption">Ambassadors</li>
+            <li class="sidebarOption">Interviewers & Contacts</li>
+            <li class="sidebarOption">Archive</li>
         </ul>
     </div>
         <?php

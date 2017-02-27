@@ -29,11 +29,25 @@ body {
     width: 25%;
     float: left;
     height: 100%;
+    font-family: Century;
 }
 
 #sidebar ul {
     list-style-type: none;
 }
+
+.sidebarOption {
+    margin-bottom: 1.5%;
+    background-color: #006bb5;
+    color: white;
+    padding: 2%;
+    width: 50%;
+}
+
+.sidebarOption:hover {
+    background-color: #808284;
+}
+
 /*----Form Styles----*/
 #formSection {
     width: 75%;
@@ -63,13 +77,48 @@ body {
     margin-top: 5px;
 }
 
-.serviceRowOdd {
-    background-color: blue;
+#servicesSec tr {
+    color: white;
 }
+
+#servicesSec td {
+    padding: .75%;
+}
+
+.serviceRowOdd {
+    background-color: #006bb5;
+}
+
+.serviceRowEven {
+    background-color: #808284;
+}
+
+#deleteService {
+    text-align: right;
+}
+
 
 input {
     margin: .5%;
 }
 
+#saveButton {
+    background-color: #006bb5;
+    color: white;
+    width: 25%;
+    padding: 1%;
+}
 
+#saveButton:hover {
+    background-color: #808284;
+}
 
+#addService {
+    background-color: #006bb5;
+    color: white;
+    padding: 1%;
+}
+
+#addService:hover {
+    background-color: #808284;
+}

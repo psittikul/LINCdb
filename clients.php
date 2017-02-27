@@ -83,7 +83,7 @@ and open the template in the editor.
                     <input type="text" name="empTitle" id="empTitle"/>
                     <br/>
                     <br/>
-                    <input type="submit" value="Save" name="save"></input>
+                    <input type="submit" value="Save" name="save" id="saveButton"></input>
                 </form>
             </div>
             <div id="partnerForm">
@@ -171,9 +171,13 @@ and open the template in the editor.
                                     </td>
                                     <td>
                                         <input type="date" name="intakeDate" id="intakeDateField"/>
-                                    </td>                                
+                                    </td>
+                                    <td>
+                                        <h3 id="deleteService">X</h3>
+                                    </td>
                                 </tr>
                         </tbody>
+                        <button type="button" id="addService">Add New Service</button><br/><br/>
                     </table>
                 </form>
             </div>
