@@ -9,7 +9,6 @@ and open the template in the editor.
         <meta charset="UTF-8">
         <link rel="stylesheet" href="clientStyle.css">
         <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
-        <script type="text/javascript" src="clientInfoForm.js"></script>
         <title>LINC Database</title>
     </head>
     <body>
@@ -111,7 +110,7 @@ and open the template in the editor.
             <div id="servicesSec">
                 <form method="post" action="clients.php" enctype="multipart/form-data" >
                     <h3 class="required">Services</h3>
-                    <button type="button" id="addService" onclick="addService()">Add New Service</button><br/><br/>
+                    <button type="button" id="addServiceButton" onclick="addService()">Add New Service</button>
                     <table class = "serviceRowOdd">
                         <tbody>
                                 <tr id = "labelRow">
@@ -185,5 +184,6 @@ and open the template in the editor.
                 </form>
             </div>
         </div>
-</body>
+    <script type="text/javascript" src="clientInfoForm.js"></script>
+    </body>
 </html>

@@ -91,18 +91,13 @@ function updateStatus() {
         fieldParent.appendChild(closeDateFieldCell);
         closeDateFieldCell.appendChild(closeDateField);
         break;
-    default:
     }
 };
 
 /* Add the HTML elements for a new row of service information */
 function addService() {
     console.log("Add New Service button clicked");
-   /* var serviceTable = document.getElementById("servicesTable");
-    var newServiceTable = serviceTable.cloneNode(true);
-    var servicesForm = document.getElementById("servicesForm");
-    servicesForm.appendChild(newServiceTable); */
-}
-
+    document.getElementById("addService").innerHTML = "clicked";
+};
 /* Delete the HTML elements of a row of service information */
 
