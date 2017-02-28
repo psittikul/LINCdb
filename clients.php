@@ -13,16 +13,13 @@ and open the template in the editor.
         <title>LINC Database</title>
     </head>
     <body>
-    <div id="sidebar">
-        <ul>
-            <li class="sidebarOption">Dashboard</li>
-            <li class="sidebarOption"><a href="clients.php">Clients</a></li>
-            <li class="sidebarOption">Customers</li>
-            <li class="sidebarOption">Ambassadors</li>
-            <li class="sidebarOption">Interviewers & Contacts</li>
-            <li class="sidebarOption">Archive</li>
-        </ul>
-    </div>
+        <?php
+            include 'header.php';
+        ?>
+        <div id="sidebar">
+            <?php
+                include 'sidebar.php';
+            ?>
         </div>
         <div id="formSection">
             <h4>Bolded fields are required in order to update.</h4>

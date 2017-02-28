@@ -10,7 +10,6 @@ and open the template in the editor.
         <title>LINC Database</title>
     </head>
     <body>
-    <div id="sidebar">
         <ul>
             <li class="sidebarOption">Dashboard</li>
             <li class="sidebarOption"><a href="clients.php">Clients</a></li>
@@ -19,7 +18,6 @@ and open the template in the editor.
             <li class="sidebarOption">Interviewers & Contacts</li>
             <li class="sidebarOption">Archive</li>
         </ul>
-    </div>
         <?php
         // put your code here
         ?>
