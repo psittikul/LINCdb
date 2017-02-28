@@ -108,10 +108,10 @@ and open the template in the editor.
                 </form>
             </div>
             <div id="servicesSec">
-                <form method="post" action="clients.php" enctype="multipart/form-data" >
-                    <h3 class="required">Services</h3>
-                    <button type="button" id="addServiceButton" onclick="addService()">Add New Service</button>
-                    <table class = "serviceRowOdd">
+                <h3 class="required">Services</h3>
+                <button type="button" id="addServiceButton" onclick="addService()">Add New Service</button><br/><br/>
+                <form method="post" action="clients.php" id="servicesForm0" enctype="multipart/form-data" >
+                    <table id = "servicesTable" class="serviceRow0">
                         <tbody>
                                 <tr id = "labelRow">
                                     <td><label for="services">Service Type</label></td>
@@ -154,7 +154,7 @@ and open the template in the editor.
                                             <option disabled selected value>
                                                 -- select an option --
                                             </option>
-                                            <option value="MB">MB</option>
+                                            <option value="MB">MAB</option>
                                             <option value="SM">SM</option>
                                             <option value="DC">DC</option>
                                         </select>
@@ -175,8 +175,8 @@ and open the template in the editor.
                                     <td>
                                         <input type="date" name="intakeDate" id="intakeDateField"/>
                                     </td>
-                                    <td>
-                                        <h3 id="deleteService" onclick="deleteService()">X</h3>
+                                    <td id="deleteCell">
+                                        <h3 class="deleteService" id="0" onclick="deleteService(this)">Clear</h3>
                                     </td>
                                 </tr>
                         </tbody>

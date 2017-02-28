@@ -100,19 +100,28 @@ input {
     color: white;
 }
 
-#servicesSec td {
-    padding: .75%;
-}
 
-.serviceRowOdd {
+
+.serviceRow0 {
     background-color: #006bb5;
 }
 
-.serviceRowEven {
+.serviceRow1 {
     background-color: #808284;
 }
 
-#addService {
+.serviceRow2 {
+    background-color: #006bb5;
+}
+
+.serviceRow3 {
+    background-color: #808284;
+}
+
+.serviceRow4 {
+    background-color: #006bb5;
+}
+#addServiceButton {
     background-color: #006bb5;
     color: white;
     width: 15%;
