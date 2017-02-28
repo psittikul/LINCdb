@@ -61,7 +61,7 @@ if ($submitted) {
     }
     
 }
-
+    file_put_contents('clients.php', ob_get_contents());
 ?>
 </body>
 </html>

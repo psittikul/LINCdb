@@ -14,7 +14,7 @@ and open the template in the editor.
             <img src="linc-logo-blue.jpg"></img>
         </div>   
         <?php
-        // put your code here
+            ob_start();
         ?>
     </body>
 </html>

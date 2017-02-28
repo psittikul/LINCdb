@@ -7,16 +7,22 @@ and open the template in the editor.
 <html>
     <head>
         <meta charset="UTF-8">
-        <link rel="stylesheet" href="clientStyle.css?ver=<?php echo filemtime('clientStyle.css');?>" type="text/css">
+        <link rel="stylesheet" href="clientStyle.css">
         <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
         <script type="text/javascript" src="clientInfoForm.js"></script>
         <title>LINC Database</title>
     </head>
     <body>
-        <?php
-            include 'header.php';
-            include 'sidebar.php';
-        ?>
+    <div id="sidebar">
+        <ul>
+            <li class="sidebarOption">Dashboard</li>
+            <li class="sidebarOption"><a href="clients.php">Clients</a></li>
+            <li class="sidebarOption">Customers</li>
+            <li class="sidebarOption">Ambassadors</li>
+            <li class="sidebarOption">Interviewers & Contacts</li>
+            <li class="sidebarOption">Archive</li>
+        </ul>
+    </div>
         </div>
         <div id="formSection">
             <h4>Bolded fields are required in order to update.</h4>
@@ -108,6 +114,7 @@ and open the template in the editor.
             <div id="servicesSec">
                 <form method="post" action="clients.php" enctype="multipart/form-data" >
                     <h3 class="required">Services</h3>
+                    <button type="button" id="addService" onclick="addService()">Add New Service</button><br/><br/>
                     <table class = "serviceRowOdd">
                         <tbody>
                                 <tr id = "labelRow">
@@ -173,17 +180,13 @@ and open the template in the editor.
                                         <input type="date" name="intakeDate" id="intakeDateField"/>
                                     </td>
                                     <td>
-                                        <h3 id="deleteService">X</h3>
+                                        <h3 id="deleteService" onclick="deleteService()">X</h3>
                                     </td>
                                 </tr>
                         </tbody>
-                        <button type="button" id="addService">Add New Service</button><br/><br/>
                     </table>
                 </form>
             </div>
         </div>
-        <?php
-            include 'save.php';
-        ?>
-    </body>
+</body>
 </html>

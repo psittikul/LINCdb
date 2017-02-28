@@ -12,6 +12,14 @@ body {
     font-family: "Ubuntu", sans-serif;
 }
 
+a {
+    text-decoration: none;
+}
+
+a:visited {
+    color: white;
+}
+
 .required {
     font-weight: bold;
 }
@@ -44,6 +52,7 @@ body {
     width: 50%;
 }
 
+
 .sidebarOption:hover {
     background-color: #808284;
 }
@@ -70,7 +79,17 @@ body {
     height: 50%;
     float: right;
 }
+input {
+    margin: .5%;
+}
 
+#saveButton {
+    background-color: #006bb5;
+    color: white;
+    width: 25%;
+    padding: 1%;
+}
+/*----Service Form Styles----*/
 #servicesSec{
     width: 100%;
     float: left;
@@ -93,32 +112,20 @@ body {
     background-color: #808284;
 }
 
+#addService {
+    background-color: #006bb5;
+    color: white;
+    width: 15%;
+    padding: .5%;    
+}
+
 #deleteService {
     text-align: right;
 }
 
 
-input {
-    margin: .5%;
-}
 
-#saveButton {
-    background-color: #006bb5;
-    color: white;
-    width: 25%;
-    padding: 1%;
-}
 
-#saveButton:hover {
-    background-color: #808284;
-}
 
-#addService {
-    background-color: #006bb5;
-    color: white;
-    padding: 1%;
-}
 
-#addService:hover {
-    background-color: #808284;
-}
+

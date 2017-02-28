@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 
+/* Update number of units when user changes the value of the service type field */
 function updateUnits() {
     console.log("Working!");
     var service = document.getElementById("services").value;
@@ -42,6 +43,7 @@ function updateUnits() {
     }
 };
 
+/* Update fields as necessary when user changes the value of the status field */
 function updateStatus() {
     console.log("Deferred conditional");
     var status = document.getElementById("status").value;
@@ -93,4 +95,14 @@ function updateStatus() {
     }
 };
 
+/* Add the HTML elements for a new row of service information */
+function addService() {
+    console.log("Add New Service button clicked");
+   /* var serviceTable = document.getElementById("servicesTable");
+    var newServiceTable = serviceTable.cloneNode(true);
+    var servicesForm = document.getElementById("servicesForm");
+    servicesForm.appendChild(newServiceTable); */
+}
+
+/* Delete the HTML elements of a row of service information */
 
