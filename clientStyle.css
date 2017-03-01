@@ -132,9 +132,16 @@ input {
     text-align: right;
 }
 
+#conditionalShow {
+    display: none;
+}
 
+#servicesForm {
+    display: none;
+}
 
-
-
+#hiddenServicesTable {
+    display: none;
+}
 
 

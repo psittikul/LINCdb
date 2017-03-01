@@ -5,7 +5,19 @@
  */
 
 /* Update number of units when user changes the value of the service type field */
+
+// Variable to track how many services have been added so we can delete correct one if necessary
+
 var serviceRowNum = 0;
+
+// Variables to check if updateStatus() was called for "Deferred" or "Closed" so we don't add more fields
+var deferredStatusCalled = 0;
+var closedStatusCalled = 0;
+
+function doNothing() {
+    console.log("No need to change fields");
+};
+
 function updateUnits() {
     console.log("Working!");
     var service = document.getElementById("services").value;
@@ -42,84 +54,82 @@ function updateUnits() {
             units.value = 30;
             break;
     }
-};
+}
+;
 
-/* Update fields as necessary when user changes the value of the status field */
+// Still need to fix this so fields don't keep adding if "Deferred" or "Closed" are selected repeatedly.
 function updateStatus() {
-    console.log("Deferred conditional");
+    console.log("Update status called");
     var status = document.getElementById("status").value;
+    console.log(status);
     var labelParent = document.getElementById("additionalLabelRow");
-    var fieldParent = document.getElementById("additionalFieldRow");    
-  switch (status) {
-      case "Deferred":
-        var deferredLabelCell = document.createElement("td");
-        deferredLabelCell.id = "deferedLabelCell";
-        deferredLabelCell.className = "conditionalLabel";
-        document.createTextNode("deferredLabelCell");
-        var deferredFieldCell = document.createElement("td");
-        deferredFieldCell.id = "deferredFieldCell";
-        deferredFieldCell.className = "conditionalField";
-        document.createTextNode(deferredFieldCell);
-        var deferredField = document.createElement("input");
-        deferredField.type = "text";
-        deferredField.id = "deferred";
-        document.createTextNode(deferredField);
-        var deferredLabel=document.createElement("label");
-        var deleteCell = document.getElementById("deleteCell");
-        deferredLabel.for = "deferred";
-        deferredLabel.innerHTML = "Deferred Until";
-        document.createTextNode(deferredLabel);
-        labelParent.appendChild(deferredLabelCell);
-        deferredLabelCell.appendChild(deferredLabel);
-        fieldParent.insertBefore(deferredFieldCell, deleteCell);
-        deferredFieldCell.appendChild(deferredField);
-        break;
-      case "Closed":
-        console.log("Closed");
-        var closeDateLabelCell = document.createElement("td");
-        closeDateLabelCell.id = "closeDateLabelCell";
-        closeDateLabelCell.className = "conditionalLabel";
-        document.createTextNode(closeDateLabelCell);
-        var closeDateLabel = document.createElement("label");
-        closeDateLabel.for = "closeDateField";
-        closeDateLabel.innerHTML = "Close Date";
-        document.createTextNode(closeDateLabel);
-        var closeDateFieldCell = document.createElement("td");
-        closeDateFieldCell.id = "closeDateFieldCell";
-        closeDateFieldCell.className = "conditionalField";
-        document.createTextNode(closeDateFieldCell);
-        var closeDateField = document.createElement("input");
-        closeDateField.type = "date";
-        closeDateField.id = "closeDateField";
-        var deleteCell = document.getElementById("deleteCell");
-        document.createTextNode(closeDateField);
-        labelParent.appendChild(closeDateLabelCell);
-        closeDateLabelCell.appendChild(closeDateLabel);
-        fieldParent.insertBefore(closeDateFieldCell, deleteCell);
-        closeDateFieldCell.appendChild(closeDateField);
-        break;
-    case "blank":
-        removeFields();
-        break;
-  }
+    var fieldParent = document.getElementById("additionalFieldRow");
+    console.log(deferredStatusCalled);
+    if ((deferredStatusCalled !== 0)  & status === "Deferred") {
+        doNothing();
+    }
+    if ((closedStatusCalled !== 0) & status === "Closed") {
+        doNothing();
+    }
+    else {
+    switch (status) {
+        case "Deferred":
+            console.log("Deferred Status has not been updated yet");
+            var deferredLabelCell = document.createElement("td");
+            deferredLabelCell.id = "deferedLabelCell";
+            deferredLabelCell.className = "conditionalLabel";
+            document.createTextNode("deferredLabelCell");
+            var deferredFieldCell = document.createElement("td");
+            deferredFieldCell.id = "deferredFieldCell";
+            deferredFieldCell.className = "conditionalField";
+            document.createTextNode(deferredFieldCell);
+            var deferredField = document.createElement("input");
+            deferredField.type = "text";
+            deferredField.id = "deferred";
+            document.createTextNode(deferredField);
+            var deferredLabel = document.createElement("label");
+            var deleteCell = document.getElementById("deleteCell");
+            deferredLabel.for = "deferred";
+            deferredLabel.innerHTML = "Deferred Until";
+            document.createTextNode(deferredLabel);
+            labelParent.appendChild(deferredLabelCell);
+            deferredLabelCell.appendChild(deferredLabel);
+            fieldParent.insertBefore(deferredFieldCell, deleteCell);
+            deferredFieldCell.appendChild(deferredField);
+            deferredStatusCalled = true;
+            deferredStatusCalled = 1;
+            break;
+        case "Closed":
+            console.log("Closed");
+            var closeDateLabelCell = document.createElement("td");
+            closeDateLabelCell.id = "closeDateLabelCell";
+            closeDateLabelCell.className = "conditionalLabel";
+            document.createTextNode(closeDateLabelCell);
+            var closeDateLabel = document.createElement("label");
+            closeDateLabel.for = "closeDateField";
+            closeDateLabel.innerHTML = "Close Date";
+            document.createTextNode(closeDateLabel);
+            var closeDateFieldCell = document.createElement("td");
+            closeDateFieldCell.id = "closeDateFieldCell";
+            closeDateFieldCell.className = "conditionalField";
+            document.createTextNode(closeDateFieldCell);
+            var closeDateField = document.createElement("input");
+            closeDateField.type = "date";
+            closeDateField.id = "closeDateField";
+            var deleteCell = document.getElementById("deleteCell");
+            document.createTextNode(closeDateField);
+            labelParent.appendChild(closeDateLabelCell);
+            closeDateLabelCell.appendChild(closeDateLabel);
+            fieldParent.insertBefore(closeDateFieldCell, deleteCell);
+            closeDateFieldCell.appendChild(closeDateField);
+            closedStatusCalled = true;
+            closedStatusCalled = 1;
+            break;
+        case "blank":
+            break;
+    }
+}
 };
-
-function removeFields() {
-    console.log("Resetting");
-    var conditionalLabelArray = document.getElementsByClassName("conditionalLabel");
-    var conditionalFieldArray = document.getElementsByClassName("conditionalField");
-    console.log(conditionalFieldArray.length);
-    if (conditionalLabelArray.length !== 0) {
-        for (i = 0; i < conditionalLabelArray.length; i++) {
-            conditionalLabelArray[i].parentNode.removeChild(conditionalLabelArray[i]);
-        }
-    }
-    if (conditionalFieldArray.length !== 0) {
-        for (i = 0; i < conditionalFieldArray.length; i++) {
-            conditionalFieldArray[i].parentNode.removeChild(conditionalFieldArray[i]);
-        }
-    }
-};    
 
 /* Add the HTML elements for a new row of service information */
 function addService() {
@@ -127,44 +137,42 @@ function addService() {
     serviceRowNum++;
     console.log(oldRowNum);
     console.log(serviceRowNum);
-    var serviceTable = document.getElementById("servicesForm0");
+    var serviceTable = document.getElementById("hiddenServicesTable");
     var newServiceTable = serviceTable.cloneNode(true);
-    newId = "servicesForm"+serviceRowNum;
-    newClass = "serviceRow"+serviceRowNum;
-    newServiceTable.id = newId;
-    newServiceTable.getElementsByClassName("serviceRow0")[0].className = "serviceRow"+serviceRowNum;
+    newClass = "serviceRow" + serviceRowNum;
+    newServiceTable.id = "servicesTable";
+    newServiceTable.className = newClass;
     newServiceTable.getElementsByClassName("deleteService")[0].innerHTML = "X";
     newServiceTable.getElementsByClassName("deleteService")[0].id = serviceRowNum.toString();
-    document.getElementById("servicesSec").appendChild(newServiceTable);
-    document.getElementById(newId).reset();
-    removeFields();
+    document.getElementById("servicesForm0").appendChild(newServiceTable);
     console.log("Cloned.");
 };
+
 /* Delete the HTML elements of a row of service information */
 function deleteService(el) {
     var thisHTML = el.innerHTML;
     if (thisHTML === "Clear") {
         document.getElementById("servicesForm0").reset();
-    }
-    else {
+    } else {
         console.log(el.className);
         console.log(el.innerHTML);
         var deleteNum = el.id;
-        var classToDelete = "serviceRow"+deleteNum;
-        console.log(classToDelete);
-        var deleteThis = document.getElementsByClassName(classToDelete)[0];
+        var idToDelete = "servicesForm" + deleteNum;
+        console.log(idToDelete);
+        var deleteThis = document.getElementById(idToDelete);
         console.log(deleteThis);
         deleteThis.parentNode.removeChild(deleteThis);
         serviceRowNum--;
-        for (i = 0; i < (serviceRowNum+1); i++) { 
-            var updatedClassName = "serviceRow"+i;
-            var updatedFormName = "servicesForm"+i;
-            var currentForm = document.getElementsByTagName("form")[2+i];
+        for (i = 0; i < (serviceRowNum + 1); i++) {
+            var updatedClassName = "serviceRow" + i;
+            var updatedFormName = "servicesForm" + i;
+            var currentForm = document.getElementsByTagName("form")[3 + i];
             currentForm.id = updatedFormName;
             console.log(updatedFormName);
-            document.getElementsByTagName("table")[i].className = updatedClassName;
+            currentForm.getElementsByTagName("table")[i].className = updatedClassName;
             document.getElementsByClassName("deleteService")[i].id = i;
-        }       
+        }
     }
 
-};
+}
+;
