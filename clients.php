@@ -39,13 +39,13 @@ and open the template in the editor.
                     <input type="tel" name="empPhone" id="empPhone"/></br>
                     <label for="empPhone2">Secondary Phone</label>
                     <input type="empPhone2" id="empPhone2"/><br/>
-                    Preferred Contact Method
-                    <label for="phonePreferred">Phone</label>
+                    Preferred Contact Method<br/>
                     <input type="radio" name="contactMethod" id="phonePreferred" value="Phone"/>
-                    <label for="emailPreferred">Email</label>
+                    <label for="phonePreferred">Phone</label>
                     <input type="radio" name="contactMethod" id="emailPreferred" class="radio" value="Email"/>
-                    <label for="none">None</label>
-                    <input type="radio" name="contactMethod" id="none" value="None"/><br/>
+                    <label for="emailPreferred">Email</label>
+                    <input type="radio" name="contactMethod" id="none" value="None"/>
+                    <label for="none">None</label><br/>                    
                     <label for="empAddress">Address</label>
                     <input type="text" name="empAddress" id="empAddress"/></br>
                     <label for="empCity">City</label> 
@@ -54,10 +54,10 @@ and open the template in the editor.
                     <input type="text" name="empState" id="empState"/></br>
                     <label for="referralDate" class="required">Referral Date</label>
                     <input type="date" name="referralDate" id="referralDate"/></br>
-                    <label for="giftedServices">Check this if this referral was a gifted service
-                        <input type="radio" id="giftedServices" class="radio" name="giftedServices"/><br/>
-                        <label for="companies" class = "required">Employer</label>
-                        <input list="companies">
+                    <input type="radio" id="giftedServices" class="radio" name="giftedServices"/>
+                    <label for="giftedServices">This is a gifted service<br/>
+                    <label for="companies" class = "required">Employer</label>
+                    <input list="companies">
                         <datalist id="companies">
                             <option value="Air Products, Inc.">
                             <option value="Boston Beer Company">

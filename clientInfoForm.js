@@ -64,11 +64,10 @@ function updateStatus() {
     console.log(status);
     var labelParent = document.getElementById("additionalLabelRow");
     var fieldParent = document.getElementById("additionalFieldRow");
-    console.log(deferredStatusCalled);
     if ((deferredStatusCalled !== 0)  & status === "Deferred") {
         doNothing();
     }
-    if ((closedStatusCalled !== 0) & status === "Closed") {
+    else if ((closedStatusCalled !== 0) & status === "Closed") {
         doNothing();
     }
     else {
@@ -96,7 +95,6 @@ function updateStatus() {
             deferredLabelCell.appendChild(deferredLabel);
             fieldParent.insertBefore(deferredFieldCell, deleteCell);
             deferredFieldCell.appendChild(deferredField);
-            deferredStatusCalled = true;
             deferredStatusCalled = 1;
             break;
         case "Closed":
@@ -122,7 +120,6 @@ function updateStatus() {
             closeDateLabelCell.appendChild(closeDateLabel);
             fieldParent.insertBefore(closeDateFieldCell, deleteCell);
             closeDateFieldCell.appendChild(closeDateField);
-            closedStatusCalled = true;
             closedStatusCalled = 1;
             break;
         case "blank":
