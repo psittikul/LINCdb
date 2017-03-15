@@ -150,26 +150,46 @@ function deleteService(el) {
     var thisHTML = el.innerHTML;
     if (thisHTML === "Clear") {
         document.getElementById("servicesForm0").reset();
+        /*
+        if (document.getElementById("deferredLabelCell") !== null) {
+            var removeLabel = document.getElementById("deferredLabelCell");
+            removeLabel.parentNode.removeChild(removeLabel);
+            var removeField = document.getElementById("deferredFieldCell");
+            removeField.parentNode.removeChild(removeField);
+            deferredStatusCalled = 0;
+        }
+        else if (document.getElementById("closeDateLabelCell") !== null) {
+            var removeCloseLabel = document.getElementById("closeDateLabelCell");
+            removeCloseLabel.parentNode.removeChild(removeCloseLabel);
+            var removeCloseField = document.getElementById("closeDateFieldCell");
+            removeCloseField.parentNode.removeChild(removeCloseField);
+            closedStatusCalled = 0;
+        } */
+        if (document.getElementsByClassName("conditionalLabel").length !== 0) {
+            for (i = document.getElementsByClassName("conditionalLabel").length - 1; i > -1; i--) {
+                labelToDelete = document.getElementsByClassName("conditionalLabel")[i];
+                labelToDelete.parentNode.removeChild(labelToDelete);
+                fieldToDelete = document.getElementsByClassName("conditionalField")[i];
+                fieldToDelete.parentNode.removeChild(fieldToDelete);
+            }
+            deferredStatusCalled = 0;
+            closedStatusCalled = 0;
+        }
     } else {
         console.log(el.className);
         console.log(el.innerHTML);
         var deleteNum = el.id;
-        var idToDelete = "servicesForm" + deleteNum;
-        console.log(idToDelete);
-        var deleteThis = document.getElementById(idToDelete);
+        var classToDelete = "serviceRow" + deleteNum;
+        console.log(classToDelete);
+        var deleteThis = document.getElementsByClassName(classToDelete)[0];
         console.log(deleteThis);
         deleteThis.parentNode.removeChild(deleteThis);
         serviceRowNum--;
         for (i = 0; i < (serviceRowNum + 1); i++) {
             var updatedClassName = "serviceRow" + i;
-            var updatedFormName = "servicesForm" + i;
-            var currentForm = document.getElementsByTagName("form")[3 + i];
-            currentForm.id = updatedFormName;
-            console.log(updatedFormName);
-            currentForm.getElementsByTagName("table")[i].className = updatedClassName;
-            document.getElementsByClassName("deleteService")[i].id = i;
+            document.getElementsByTagName("table")[i+1].className = updatedClassName;
+            document.getElementsByClassName("deleteService")[i+1].id = i;
         }
     }
-
 }
 ;
