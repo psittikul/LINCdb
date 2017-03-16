@@ -25,12 +25,13 @@ a:visited {
 }
 
 #header {
-    width:25%;
-    margin-bottom: 5%;
+    width: 100%;
+    float: left;
+    margin-bottom: 3.5%;
 }
 #header img {
-    width: 75%;
-    margin: 10%;
+    width: 20%;
+    margin: 2%;
 }
 
 #sidebar {
@@ -50,11 +51,18 @@ a:visited {
     color: white;
     padding: 2%;
     width: 50%;
+    transition: 0.3s;
 }
 
 
 .sidebarOption:hover {
     background-color: #808284;
+}
+
+#clientsOption {
+    background-color: #a8cf41;
+    text-decoration: underline;
+    font-size: larger;
 }
 
 /*----Form Styles----*/
@@ -100,7 +108,10 @@ input {
     color: white;
 }
 
-
+#servicesSec td {
+    padding-left: 1%;
+    padding-right: 1%;
+}
 
 .serviceRow0 {
     background-color: #006bb5;
@@ -128,8 +139,9 @@ input {
     padding: .5%;    
 }
 
-#deleteService {
+.deleteService {
     text-align: right;
+    cursor: pointer;
 }
 
 #conditionalShow {
@@ -144,4 +156,38 @@ input {
     display: none;
 }
 
+/*----Service Form Styles----*/
+/* Style the tab */
+
+/* Style the buttons inside the tab */
+div.tab button {
+    font-family: inherit;
+    font-size: inherit;
+    overflow: hidden;
+    background-color: #006bb5;
+    float: left;
+    border: groove;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+}
+
+/* Change background color of buttons on hover */
+div.tab button:hover {
+    background-color: #ddd;
+}
+
+/* Create an active/current tablink class */
+div.tab button.active {
+    background-color: #ccc;
+}
+
+.tabcontent.active {
+    display: block;
+}
+/* Style the tab content */
+.tabcontent {
+    display: none;
+}
 

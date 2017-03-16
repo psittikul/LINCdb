@@ -12,7 +12,7 @@ and open the template in the editor.
     <body>
         <ul>
             <li class="sidebarOption">Dashboard</li>
-            <li class="sidebarOption"><a href="clients.php">Clients</a></li>
+            <li class="sidebarOption" id="clientsOption"><a href="clients.php">Clients</a></li>
             <li class="sidebarOption">Customers</li>
             <li class="sidebarOption">Ambassadors</li>
             <li class="sidebarOption">Interviewers & Contacts</li>

@@ -22,7 +22,25 @@ and open the template in the editor.
             include 'sidebar.php';
             ?>
         </div>
-        <div id="formSection">
+        <!-- Client tabs -->
+        <div class="tab">
+            <button class="tablinks active" onclick="openTab(event, 'formSection')">Client Information</button>
+            <button class="tablinks" onclick="openTab(event, 'demographics')">Demographics</button>
+            <button class="tablinks" onclick="openTab(event, 'dual-career')">Dual Career</button>
+            <button class="tablinks" onclick="openTab(event, 'clientLog')">Client Log</button>
+        </div>
+
+        <div id="demographics" class="tabcontent">
+            <p>Paris is the capital of France.</p> 
+        </div>
+
+        <div id="Tokyo" class="tabcontent">
+            <h3>Tokyo</h3>
+            <p>Tokyo is the capital of Japan.</p>
+        </div>
+        <!-- End client tabs -->
+        
+        <div id="formSection" class="tabcontent active">
             <h4>Bolded fields are required in order to update.</h4>
             <div id="employeeForm">
                 <form action="save.php" method="post">
@@ -56,8 +74,8 @@ and open the template in the editor.
                     <input type="date" name="referralDate" id="referralDate"/></br>
                     <input type="radio" id="giftedServices" class="radio" name="giftedServices"/>
                     <label for="giftedServices">This is a gifted service<br/>
-                    <label for="companies" class = "required">Employer</label>
-                    <input list="companies">
+                        <label for="companies" class = "required">Employer</label>
+                        <input list="companies">
                         <datalist id="companies">
                             <option value="Air Products, Inc.">
                             <option value="Boston Beer Company">
