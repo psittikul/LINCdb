@@ -31,7 +31,6 @@ and open the template in the editor.
         </div>
 
         <div id="demographics" class="tabcontent">
-            <p>Paris is the capital of France.</p> 
         </div>
 
         <div id="Tokyo" class="tabcontent">
@@ -272,6 +271,14 @@ and open the template in the editor.
                         </tbody>
                     </table>
                 </form>
+                <label for="5surveyDate" style="margin-right: 1%;">Date 5-hour Survey Sent</label>
+                <input id="5surveyDateField" name="5surveyDate" type="date" style="margin-right: 6%;"/>
+                <label for="exitSurveyDate" type="date" style="margin-right: 1%;">Date Exit Survey Sent</label>
+                <input id="exitSurveyDateField" name="exitSurveyDate" type="date"/><br/>
+                <label for="binderDelivery" style="margin-right: 1%;">Binder Delivered?</label>
+                <input id="binderField" style="margin-right: 6%;" name="binderDelivery" type="radio"/>
+                <label for="basketDelivery" style="margin-right: 1%;">Basket Delivered?</label>
+                <input id="basketField" name="basketDelivery" type="radio"/>
             </div>
         </div>
         <script type="text/javascript" src="clientInfoForm.js"></script>
