@@ -41,24 +41,24 @@ and open the template in the editor.
         <!-- End client tabs -->
         
         <div id="formSection" class="tabcontent active">
-            <h4>Bolded fields are required in order to update.</h4>
+            <h4 style="padding-left: 2%;">Bolded fields are required in order to make changes.</h4>
             <div id="employeeForm">
                 <form action="save.php" method="post">
                     <h3>Employee</h3>
                     <label for="empFirstName" class="required">First Name</label>
-                    <input type="text" name="empFirstName" id="empFirstName"/></br>
+                    <input type="text" name="empFirstName" id="empFirstName"/><br/>
                     <label for="empLastName" class="required">Last Name</label>
                     <input type="text" name="empLastName" id="empLastName"/></br>
                     <label for="empEmail" class="required">Primary Email</label>
-                    <input type="email" name="empEmail" id="empEmail"/></br>
+                    <input type="email" name="empEmail" id="empEmail"/><br/>
                     <label for="empEmail2">Secondary Email</label>
                     <input type="email" name="empEmail2" id="empEmail2"/><br/>
                     <label for = "empPhone">Phone</label>
-                    <input type="tel" name="empPhone" id="empPhone"/></br>
+                    <input type="tel" name="empPhone" id="empPhone"/><br/>
                     <label for="empPhone2">Secondary Phone</label>
                     <input type="empPhone2" id="empPhone2"/><br/>
                     Preferred Contact Method<br/>
-                    <input type="radio" name="contactMethod" id="phonePreferred" value="Phone"/>
+                    <input type="radio" name="contactMethod" id="phonePreferred" style="margin-top: 2%;" value="Phone"/>
                     <label for="phonePreferred">Phone</label>
                     <input type="radio" name="contactMethod" id="emailPreferred" class="radio" value="Email"/>
                     <label for="emailPreferred">Email</label>

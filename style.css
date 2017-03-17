@@ -7,9 +7,15 @@ and open the template in the editor.
     Created on : Jan 15, 2017, 12:51:09 AM
     Author     : Patricia Sittikul
 */
+
+body {
+    background-image: url("sayagata-400px.png");
+}
+
 #header {
     width:25%;
     margin-bottom: 5%;
+    background-color: #005da6;
 }
 #header img {
     width: 75%;

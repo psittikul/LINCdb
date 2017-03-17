@@ -11,7 +11,7 @@ and open the template in the editor.
     </head>
     <body>
         <div id="header">
-            <img src="linc-logo-blue.jpg"></img>
+            <img src="LINC_white_transparent.png"></img>
         </div>   
         <?php
             ob_start();
