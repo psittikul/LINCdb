@@ -31,6 +31,9 @@ and open the template in the editor.
         </div>
 
         <div id="demographics" class="tabcontent">
+            <?php
+                include 'demographicsTab.php';
+            ?>
         </div>
 
         <div id="Tokyo" class="tabcontent">
@@ -42,7 +45,7 @@ and open the template in the editor.
         <div id="formSection" class="tabcontent active">
             <h4 style="padding-left: 2%;">Bolded fields are required in order to make changes.</h4>
             <div id="employeeForm">
-                <form action="save.php" method="post">
+                <form method="post" action="save.php" enctype="multipart/form-data" name="employeeForm">
                     <h3>Employee</h3>
                     <label for="empFirstName" class="required">First Name</label>
                     <input type="text" name="empFirstName" id="empFirstName"/><br/>
@@ -94,7 +97,7 @@ and open the template in the editor.
                             <option value="PPL">
                             <option value="St. Luke's">
                             <option value="Victaulic">        
-                        </datalist> 
+                        </datalist>
                         </br>
                         <label for="empPosition">Position</label>
                         <input type="text" name="empPosition"/><br/>
@@ -108,7 +111,7 @@ and open the template in the editor.
                 </form>
             </div>
             <div id="partnerForm">
-                <form method="post" action="clients.php" enctype="multipart/form-data" >
+                <form method="post" action="clients.php" enctype="multipart/form-data" name="partnerForm">
                     <h3>Spouse/Partner</h3>
                     <label for="spFirstName">First Name</label>
                     <input type="text" name="spFirstName" id="spFirstName"/></br>

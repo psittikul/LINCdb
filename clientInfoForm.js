@@ -213,3 +213,16 @@ function openTab(evt, cityName) {
     document.getElementById(cityName).style.display = "block";
     evt.currentTarget.className += " active";
 };
+
+var rad = document.employeeDemographicForm.childrenButton;
+for (var i = 0; i < rad.length; i++) {
+    rad[i].onclick = function() {
+        if (this.value === "Children") {
+            document.getElementById("dependentsForm").style.display = "block";
+        }
+        else {
+            document.getElementById("dependentsForm").style.display = "none";
+            console.log("Null");
+        }
+    };
+}
